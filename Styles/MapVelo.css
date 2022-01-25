@@ -14,6 +14,12 @@ main
 	width: 100%;
 	min-height: 48vw;
 }
+main#MapMain
+{
+	margin: auto;
+	width: 100%;
+	min-height: 48vw;
+}
 
 
 /****************************************************
@@ -106,7 +112,7 @@ ______          _
 /*MAP*/
 
 #map{ 
-    height:48vw!important;
+    height:100vh!important;
 }
 
 /* ACCUEIL */
@@ -195,4 +201,103 @@ ______          _
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+
+/* info stations */ 
+
+div#InfoStation {
+    background-color: #fff;
+    display: none;
+    position: absolute;
+    top: 0px;
+    width: 40vh;
+    left: 0px;
+    height: 100vh;
+    text-decoration : none;
+    transition: 1s;
+	z-index:2;
+	flex-direction: column;
+	
+}
+
+div#map{
+	z-index:1;
+}
+
+#FirstBlocStation
+{
+	display: flex;
+	flex-direction: column;
+	width:40vh;
+	height: 32vh;
+	font-family: Google Sans,Roboto,Arial,sans-serif;
+    line-height: 1.75rem;
+    font-size: 1.375rem;
+    letter-spacing: 0;
+    font-weight: 400;
+	padding-bottom:1vw;
+	border-bottom:1px solid #e8eaed;
+	margin-top:3vw;
+}
+
+#ImageStation 
+{
+	width:fit-content;
+}
+
+#ImageStation img
+{
+	width:40vh;
+	height: 20vh;
+}
+
+#NomStation
+{
+	width: fit-content;
+	margin: auto;
+	margin-top:1vw;
+}
+
+#StatutStation
+{
+	margin-top:2vw;
+	margin-right: auto;
+	margin-left: auto;
+	color:green;
+}
+
+#SecondBlocStation
+{
+	margin-top:2vw;
+	height : 24vw;
+	padding-bottom:2vw;
+	border-bottom:1px solid #e8eaed;
+	display: flex;
+	flex-direction: column;
+}
+
+#ligneBloc2
+{
+	margin-left:2vw;
+	display: flex;
+	width:90%;
+	height : 4vw;
+}
+#logobloc2{
+	margin-top: auto;
+	margin-bottom: auto;
+	height: 40px;
+	width:40px;
+}
+#logobloc2 img {
+	width: inherit;
+}
+
+#libelleBloc2
+{
+	width: fit-content;
+	margin-left:1vw;
+	margin-top: auto;
+	margin-bottom: auto;
 }

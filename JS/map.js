@@ -26,6 +26,7 @@ function initMap()
 
   //On place les markers sur la carte en récupérant leurs coordonnées depuis l'API
   ListeStations();
+
 }
 
 function ListeStations()
@@ -46,20 +47,50 @@ function ListeStations()
       data.forEach(station => 
       {  
         //Place le marqueur sur la carte
-        var marker = L.marker( [station.position.latitude, station.position.longitude], { icon: myIcon } ); 
-        marker.bindPopup(station);
+        var marker = L.marker( [station.position.latitude, station.position.longitude], { icon: myIcon } ).on('click', function(e) {
+          InfoStation(station.number,station.contractName);
+        });
+       
         markerClusters.addLayer(marker); 
         markers.push(marker);        
       });
     } 
 
     //Groupe les marqeurs proches
-    var group = new L.featureGroup(markers); 
-    //macarte.fitBounds(group.getBounds().pad(0.5)); 
+    L.featureGroup(markers);
+
     macarte.addLayer(markerClusters);
 
   }
   //Execution de l'appel de l'API
   request.send();
 }
+
+function InfoStation(number,contractName)
+{
+  //On affiche la div avec les infos de la station selectionnée
+  document.getElementById("InfoStation").style = "display : flex;";
+
+  //Déclare une requete d'appel pour l'API -> pour récupérer les infos de la station id en param
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://api.jcdecaux.com/vls/v3/stations/'+number+'?contract='+contractName+'&apiKey=afc2870654d1c19b39d0278b671b5a148199b1c1', true);
+  
+  //On récupère la réponse
+  request.onload = function () 
+  {
+    //On transforme le JSON en objet
+    var data = JSON.parse(this.response);
+    if (request.status >= 200 && request.status < 400) 
+    {
+      document.getElementById("Name").innerHTML = data.name;
+      document.getElementById("Status").innerHTML = data.status;
+      document.getElementById("Address").innerHTML = ( data.address == "" ? "Non renseigné" : data.address );
+
+    }
+
+  }
+  //Execution de l'appel de l'API
+  request.send();
+}
+
 
