@@ -74,18 +74,27 @@ function InfoStation(number,contractName)
   //Déclare une requete d'appel pour l'API -> pour récupérer les infos de la station id en param
   var request = new XMLHttpRequest();
   request.open('GET', 'https://api.jcdecaux.com/vls/v3/stations/'+number+'?contract='+contractName+'&apiKey=afc2870654d1c19b39d0278b671b5a148199b1c1', true);
-  
+
   //On récupère la réponse
   request.onload = function () 
   {
     //On transforme le JSON en objet
     var data = JSON.parse(this.response);
+    console.log(data);
+
     if (request.status >= 200 && request.status < 400) 
     {
-      document.getElementById("Name").innerHTML = data.name;
-      document.getElementById("Status").innerHTML = data.status;
-      document.getElementById("Address").innerHTML = ( data.address == "" ? "Non renseigné" : data.address );
-
+      document.getElementById("Name").innerHTML = ( data.name == "" ? "Non renseigné" : data.name );
+      document.getElementById("Status").innerHTML = ( data.status == "" ? "Non renseigné" : data.status );
+      document.getElementById("Address").innerHTML = ( data.address == "" ? "Adresse non renseigné" : data.address );
+      document.getElementById("nbBikes").innerHTML = ( data.mainStands.availabilities.bikes === "" ? "Non renseigné" : data.mainStands.availabilities.bikes + " Vélo(s) disponible(s)" );
+      document.getElementById("mechanicalBikes").innerHTML = ( data.mainStands.availabilities.mechanicalBikes === "" ? "Non renseigné" : data.mainStands.availabilities.mechanicalBikes + " Vélo(s) méchanique(s)" );
+      document.getElementById("electricalBikes").innerHTML = ( data.mainStands.availabilities.electricalBikes === "" ? "Non renseigné" : data.mainStands.availabilities.electricalBikes + " Vélo(s) electrique(s)" );
+      document.getElementById("MajData").innerHTML = "Last check : " + ( data.lastUpdate == "" ? "Non renseigné" : convertDate(data.lastUpdate) );
+      document.getElementById("BikeCapacity").innerHTML = "Capacité totale : " + ( data.mainStands.capacity == "" ? "Non renseigné" : data.mainStands.capacity + " Vélos" );
+      document.getElementById("Banking").innerHTML = "Terminal de paiement : " + ( data.banking == "" ? "non renseigné" : data.banking ? "Disponible" : "Non disponible" );
+      document.getElementById("overflow").innerHTML = "Repose de vélo : " +( data.overflow == "" ? "Non renseigné" : data.overflow ? "Autorisé" : "Refusé" );
+      document.getElementById("connected").innerHTML = ( data.connected == "" ? "Connexion au terminal central non renseigné" : data.connected ? "Connecté au terminal central" : "Non connecté au terminal central" );
     }
 
   }
@@ -93,4 +102,16 @@ function InfoStation(number,contractName)
   request.send();
 }
 
+var leftBand = document.getElementById("close");
+leftBand.onclick = function() { 
+  document.getElementById("InfoStation").style = "display : none;";
+  document.getElementById("recherche").value = "";
+};
 
+function convertDate(date)
+{
+  var FormattedDate = date.substring(0, 10);
+  FormattedDate += " à " + date.substring(11, 13) + " " + date.substring(13, 16);
+  FormattedDate = FormattedDate.replace(":"," H ");
+  return FormattedDate;
+}
