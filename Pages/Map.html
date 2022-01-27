@@ -45,7 +45,7 @@
 				<div class="search-wrapper active">
 					<div class="input-holder">
 						<input type="text" class="search-input" id="recherche" placeholder="Recherchez une station" />
-						<button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+						<button class="search-icon" id="search" onclick="searchToggle(this, event);"><span></span></button>
 					</div>
 					<span class="close" id="close" onclick="searchToggle(this, event);"></span>
 				</div>
@@ -81,13 +81,13 @@
 							<div class="container">							  
 								<div class="dropdown">
 									<div class="select">
-										<span id ="nbBikes" >Select Gender</span>
+										<span id ="nbBikes" ></span>
 										<i class="fa fa-chevron-left"></i>
 									</div>
 									<input type="hidden" name="gender">
 									<ul class="dropdown-menu">
-										<li id="electricalBikes"></li>
-										<li id="mechanicalBikes"></li>
+										<li id="electricalBikes" ></li>
+										<li id="mechanicalBikes" ></li>
 									</ul>
 								</div>							
 							</div>
