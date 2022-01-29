@@ -111,7 +111,10 @@ function InfoStation(number,contractName)
       document.getElementById("Banking").innerHTML = "Terminal de paiement : " + ( data.banking == "" ? "non renseigné" : data.banking ? "Disponible" : "Non disponible" );
       document.getElementById("overflow").innerHTML = "Repose de vélo : " +( data.overflow == "" ? "Non renseigné" : data.overflow ? "Autorisé" : "Refusé" );
       document.getElementById("connected").innerHTML = ( data.connected == "" ? "Connexion au terminal central non renseigné" : data.connected ? "Connecté au terminal central" : "Non connecté au terminal central" );
+      myMap.flyTo(new L.LatLng(data.position.latitude, data.position.longitude), 15);
     }
+
+  
   }
  
   //ECall API
@@ -148,50 +151,66 @@ searchInput.onkeyup = function(){
 
   var result = searchStationsOnName( searchInput.value ) ;
   var blocInfo = document.getElementById("InfoStation");
+  var inputHolder = document.getElementById("search-wrapper-active");
 
   if (searchInput.value != "" )
+  {
+    try
+    {
+      document.getElementById("InfoStation").removeChild(document.getElementById("resultSearch"));
+    }catch{}
+
+    if ( result.size > 0)
+    {
+      let ConteneurResult = document.createElement("div");
+      ConteneurResult.id = "resultSearch"
+      blocInfo.insertBefore(ConteneurResult, blocInfo.children[1]);
+
+      var compteur = 0;
+      for (const [key, value] of result) 
+      {
+        if ( compteur < 5 )
+        {
+          let child = document.createElement("div");
+          child.id = "ResultChild";
+
+          let text = document.createElement("span");
+          text.id = "TexteResult"; 
+          text.innerHTML = key;
+
+          text.onclick = function () 
+          {
+            searchInput.value = text.innerHTML;
+            try
+            {
+              blocInfo.removeChild(document.getElementById("resultSearch"));
+            }catch{}
+          }
+
+          child.appendChild(text);
+
+          ConteneurResult.appendChild(child);
+          compteur++;
+          
+        }
+        else{break;}
+      }
+    }
+  }
+  else
   {
     try{
       blocInfo.removeChild(document.getElementById("resultSearch"));
     }catch{}
-
-    let ConteneurResult = document.createElement("div");
-    ConteneurResult.id = "resultSearch"
-    blocInfo.insertBefore(ConteneurResult, blocInfo.children[1]);
-
-    var compteur = 0;
-    for (const [key, value] of result) 
-    {
-      if ( compteur < 5 ){
-
-      
-        let child = document.createElement("div");
-        child.id = "ResultChild";
-
-        let text = document.createElement("span");
-        text.id = "TexteResult"; 
-        text.innerHTML = key;
-
-        text.onclick = function () {
-          searchInput.value = text.innerHTML;
-          try{
-            blocInfo.removeChild(document.getElementById("resultSearch"));
-          }catch{}
-        }
-
-        child.appendChild(text);
-
-        ConteneurResult.appendChild(child);
-        compteur++;
-        
-      }
-      else{break;}
-    }
   }
-  else{
-    try{
-      blocInfo.removeChild(document.getElementById("resultSearch"));
-    }catch{}
+
+  if ( document.body.contains(document.getElementById("resultSearch")))
+  {
+    inputHolder.style="	border-bottom:5px solid black;";
+  }
+  else
+  {
+    inputHolder.style="	border-bottom:0px solid black;";
   }
 
 };

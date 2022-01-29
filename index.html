@@ -1,67 +1,95 @@
 <!DOCTYPE html>
 <html lang="fr" style="overflow-x: hidden;">
 	<head>
-
-		<meta charset="utf-8" />
+		<meta charset="utf-8"/>
 		<title>VeloMap</title> 
 
 		<link rel="stylesheet" href="Styles/MapVelo.css"/>
-
-		<nav class="Navigation" id="Navigation">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/> 
+	</head>
+	<body>
+		<nav  id="Navigation">
 			<ul class="menuNav" id="menuNav">
 				<li class="actif" id="accueil">
 					<a href="index.html">
-						<span>ACCUEIL</span>
+						<span>Accueil</span>
 					</a></li>
 				<li id="Map">
 					<a href="Pages/Map.html">
-						<span>MAP</span>
+						<span>Map</span>
 					</a>
 				</li>
 			</ul>
 		</nav>
-
-	</head>
-	<body >
-
 		<main>
+
 			<div class="topAccueil" id="topAccueil">
-				<div class="TopTexte" id="TopTexte">
-					<h1 id="Titre">VELOMAP</h1>
-					<h2 id="SousTitre">Trouvez un vélo proche de vous !</h2>
-					<h3 id="SousTitre2">Des millions d'utilisateurs à travers le monde. Trouvez un vélo à proximité avec notre carte !</h3>
+				<div class="TopTexte" id="TopTexte">				
+					<h1 id="SousTitre2">Découvrez les bonnes raisons de louer un vélo grâce à VeloMap.</h1>
 				</div>
 			</div>
 
+			<div class="MidAccueil">
 
-			<div class="MidAccueil" id="MidAccueil">
-
-				<div class="MidAccueilGauche" id="MidAccueilGauche">
-					<div class="MidTexte" id="MidTexte">
-						<h1 id="Titre">Une carte en temps réel</h1>
-						<h2 id="SousTitre">Trouvez un vélo proche de vous !</h2>
-						<h3 id="SousTitre2">Scannez le code du vélo dans l'application et le tour est joué! </h3>
+				<div  class="MidAccueilGauche">
+					<div  class="TexteGaucheTitre" data-aos="fade-left">
+						<span > Parcourez la carte et trouvez une station proche de vous.</span>
+					</div>
+					<div class= "TexteGauche" data-aos="fade-left">
+						<p> Utilisez votre téléphone, votre ordinateur pour trouver un vélo à proximité. Nous avons conçu VéloMap pour toutes et tous ! Rejoignez près de 100 000 utilisateurs en téléchargeant VeloMap sur le PlayStore ou accéder si directement sur votre navigateur préféré.</p>
 					</div>
 				</div>
 
-				<div class="MidAccueilDroite" id="MidAccueilDroite">
-
+				<div  class="MidAccueilDroite" data-aos="fade-right">
+					<img src="Images/Map.PNG" alt="Image illustration d'une carte">
 				</div>
 
+		   
+			</div>
+			<div class="MidAccueil" >
+
+				<div  class="MidAccueilGaucheImage" data-aos="fade-right">
+					<img src="Images/Environnement.png" alt="Environnement image">
+				</div>
+
+				<div class="MidAccueilDroiteTexte">
+					<div class= "TexteDroite" data-aos="fade-left">
+						<span > Notre mission : réduire les émissions !</span>
+					</div>
+					<div class= "TexteDroite2" data-aos="fade-left">
+						<p> Notre vision consiste à ouvrir la voie vers une mobilité libre, responsable et engagée - qui profite à tous. En collaboration avec les villes et organisations partenaires, nous repensons les transports urbains en proposant des services de mobilité simples, accessibles et abordables.</p>
+					</div>
+				</div>
 			</div>
 
+			<div class="MidAccueil" id="MidAccueil">
+				<div class="MidAccueilGauche">
+					<div class= "TexteGaucheTitre" data-aos="fade-left">
+						<span > Accessible depuis tous les appareils.</span>
+					</div>
+					<div class= "TexteGauche" data-aos="fade-left">
+						<p> Utilisez votre téléphone, votre ordinateur pour trouver un vélo à proximité. Nous avons conçu VéloMap pour toutes et tous ! Rejoignez près de 100 000 utilisateurs en téléchargeant VeloMap sur le PlayStore ou accéder si directement sur votre navigateur préféré.</p>
+					</div>
+				</div>
+
+				<div  class="MidAccueilDroite" data-aos="fade-right">
+					<img src="Images/Phone.png" alt="Image d'illustration d'un téléphone">
+				</div>
+			</div>
 		</main>
 
+		<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+		<script  src="JS/animations.js"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
 
-
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-		<script type="text/javascript" src="JS/main.js"></script>
-
+		<footer>
+			<div class="footer" id="footer">
+				<img src="Images/Bike.png" alt="">
+				<a>© 2022, LAURAIN Yoan (alias Veroz). Tous droits réservés.</a>
+			</div>
+		</footer>
 	</body>
-
-		<div class="footer" id="footer">
-			<img src="Images/Bike.png" alt="">
-			<a class="" id="">© 2022, LAURAIN Yoan (alias Veroz). Tous droits réservés.</a>
-		</div>
-
 </html>
