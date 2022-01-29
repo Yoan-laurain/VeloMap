@@ -157,13 +157,13 @@ searchInput.onkeyup = function(){
   {
     try
     {
-      document.getElementById("InfoStation").removeChild(document.getElementById("resultSearch"));
+      blocInfo.removeChild(document.getElementsByClassName("resultSearch"));
     }catch{}
 
     if ( result.size > 0)
     {
       let ConteneurResult = document.createElement("div");
-      ConteneurResult.id = "resultSearch"
+      ConteneurResult.className = "resultSearch"
       blocInfo.insertBefore(ConteneurResult, blocInfo.children[1]);
 
       var compteur = 0;
@@ -183,7 +183,7 @@ searchInput.onkeyup = function(){
             searchInput.value = text.innerHTML;
             try
             {
-              blocInfo.removeChild(document.getElementById("resultSearch"));
+              blocInfo.removeChild(document.getElementsByClassName("resultSearch"));
             }catch{}
           }
 
@@ -200,11 +200,11 @@ searchInput.onkeyup = function(){
   else
   {
     try{
-      blocInfo.removeChild(document.getElementById("resultSearch"));
+      blocInfo.removeChild(document.getElementsByClassName("resultSearch"));
     }catch{}
   }
 
-  if ( document.body.contains(document.getElementById("resultSearch")))
+  if ( document.getElementsByClassName("resultSearch"))
   {
     inputHolder.style="	border-bottom:5px solid black;";
   }

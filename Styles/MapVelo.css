@@ -17,7 +17,7 @@ main#MapMain
 {
 	margin: auto;
 	width: 100%;
-	min-height: 48vw;
+	min-height: 48vh;
 }
 
 
@@ -113,7 +113,7 @@ ______          _
 }
 #footer  a {
 	text-decoration: none;
-    width: fit-content;
+    width: max-content;
     margin: auto;
 }
 
@@ -136,7 +136,7 @@ ______          _
 #footer a
 {
     text-decoration:none;
-    width:fit-content;
+    width:max-content;
     margin:auto;
 }
 
@@ -163,7 +163,7 @@ ______          _
     margin-left:2vw;
     font-weight:700;
     color:#fff;
-    font-size:1.6991rem;
+    font-size:2vw;
 }
 .MidAccueil,.MidAccueil2,.MidAccueil3
 {
@@ -250,8 +250,14 @@ ______          _
 {
     width:90%;
     text-align:left;
-    margin-top:2vw;
+    margin-top:auto;
+    margin-bottom:auto;
     margin-left:5vw;
+}
+.MidAccueilGaucheImage
+{
+    margin-bottom: auto;
+    margin-top: auto;
 }
 /*********************************************************
                             MAP 
@@ -276,7 +282,6 @@ ______          _
     transform-origin: left; 
     transform: scale(0);
     transition: 0.25s linear;
-
 }
 
 #TexteResult:hover:before
@@ -284,19 +289,18 @@ ______          _
     transform: scale(1);
 }
 
-#resultSearch{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 10px;
-	width:20.2vw;
+.resultSearch{
+	width:inherit;
     border-radius: 0px 0px 10px 10px; 
     margin-bottom:0.5vw;
     position: absolute;
-    background-color: white;
-    margin-top: 3.2vw;
+    background-color: white; 
+    margin-top: 6.2vh;
 }
 
 #ResultChild{
 	width : auto;
-	height : 1vw;
+	height : 2vh;
     margin-left:1vw;
     margin-top:0.5vw;
     margin-bottom:0.5vw;
@@ -339,29 +343,30 @@ div#map
 }
 #ImageStation
 {
-    width:fit-content
+    width:max-content
 }
 #ImageStation img
 {
-    width:40vh;height:20vh;
+    width:40vh;
+    height:20vh;
 }
 #NomStation
 {
-    width:fit-content;
-    margin:auto;
+    width:auto;
+    text-align: center;
     margin-top:1vw;
+    font-size: 2vh;
 }
 #StatutStation
 {
-    margin-top:2vw;
+    margin-top:1vw;
     margin-right:auto;
     margin-left:auto;
     color:green;
 }
 #SecondBlocStation
 {
-    height:28vw;
-    padding-bottom:2vw;
+    height:58vh;
     border-bottom:1px solid #e8eaed;
     display:flex;
     flex-direction:column;
@@ -371,7 +376,7 @@ div#map
     margin-left:2vw;
     display:flex;
     width:90%;
-    height:4vw;
+    height:9vh;
 }
 .logobloc2
 {
@@ -379,6 +384,7 @@ div#map
     margin-bottom:auto;
     height:40px;
     width:40px;
+    font-size: 1vw;
 }
 .logobloc2 img
 {
@@ -386,10 +392,11 @@ div#map
 }
 .libelleBloc2
 {
-    width:fit-content;
+    width:max-content;
     margin-left:1vw;
     margin-top:auto;
     margin-bottom:auto;
+    font-size: 2vh;
 }
 #map
 {
@@ -508,6 +515,7 @@ span.nbBikes
     width:32vh;
     border-radius:50px;
     transition:all .5s cubic-bezier(0,.105,.035,1.57);
+    height: inherit;
 }
 .search-wrapper .input-holder .search-input
 {
@@ -534,6 +542,9 @@ span.nbBikes
 {
     opacity:1;
     transform:translate(0,10px);
+    font-size: 2vh;
+    height: max-content;
+    margin-top:1vh;
 }
 .search-wrapper .input-holder .search-icon
 {

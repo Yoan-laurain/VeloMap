@@ -1,0 +1,63 @@
+@media (max-width: 1000px) 
+{
+    div#InfoStation
+    {
+        width:30vw;
+    }
+    #ImageStation img
+    {
+        width:30vw;
+        height:15vw;
+    }
+    .search-wrapper
+    {
+        width:30vw;
+    }
+    .search-wrapper.active .input-holder .search-input
+    {
+        font-size:2vw;
+        margin-top: 1vw;
+    }
+    #input-holder
+    {
+        width:30vw;
+    }
+    #NomStation
+    {
+        font-size:2vw;
+        width: 28vw;
+        margin:unset;
+        margin-left : 1vw;
+        margin-top:2vw;
+        margin-bottom:2vw;
+    }
+    #StatutStation
+    {
+        width:28vw;
+  
+        margin-left : 1vw;
+        text-align: center;
+    }
+    .libelleBloc2
+    {
+        font-size: 1.7vw;
+    }
+    .ligneBloc2
+    {
+        height:11vw;
+    }
+    #SecondBlocStation
+    {
+        height:78vw;
+    }
+
+    .container, .dropdown
+    {
+        width:21vw;
+    }
+    #FirstBlocStation
+    {
+        width:30vw;
+        height:28vw;
+    } 
+}
