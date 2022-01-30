@@ -154,15 +154,12 @@ searchInput.onkeyup = function(){
 
   if (searchInput.value != "" )
   {
-    try
-    {
-      blocInfo.removeChild(document.getElementsByClassName("resultSearch"));
-    }catch{}
+    deleteInfo(blocInfo);
 
     if ( result.size > 0)
     {
       let ConteneurResult = document.createElement("div");
-      ConteneurResult.className = "resultSearch"
+      ConteneurResult.id = "resultSearch"
       blocInfo.insertBefore(ConteneurResult, blocInfo.children[1]);
 
       var compteur = 0;
@@ -180,10 +177,7 @@ searchInput.onkeyup = function(){
           text.onclick = function () 
           {
             searchInput.value = text.innerHTML;
-            try
-            {
-              blocInfo.removeChild(document.getElementsByClassName("resultSearch"));
-            }catch{}
+            deleteInfo(blocInfo);
           }
 
           child.appendChild(text);
@@ -198,12 +192,10 @@ searchInput.onkeyup = function(){
   }
   else
   {
-    try{
-      blocInfo.removeChild(document.getElementsByClassName("resultSearch"));
-    }catch{}
+    deleteInfo(blocInfo);
   }
 
-  if ( document.getElementsByClassName("resultSearch"))
+  if ( document.getElementById("resultSearch"))
   {
     inputHolder.style="	border-bottom:5px solid black;";
   }
@@ -213,6 +205,14 @@ searchInput.onkeyup = function(){
   }
 
 };
+
+function deleteInfo(blocInfo)
+{
+  try
+  {
+    blocInfo.removeChild(document.getElementById("resultSearch"));
+  }catch{}
+}
 
 /**
  * When user click on search button

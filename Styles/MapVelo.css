@@ -289,7 +289,7 @@ ______          _
     transform: scale(1);
 }
 
-.resultSearch{
+#resultSearch{
 	width:inherit;
     border-radius: 0px 0px 10px 10px; 
     margin-bottom:0.5vw;
@@ -642,4 +642,53 @@ span.nbBikes
     height:5px;
     left:0;
     top:10px;
+}
+
+/*********************************************************
+                            Info 
+*********************************************************/
+
+#ContentInfo{
+    background-color: black;
+    height:100vh;
+    display: flex;
+}
+
+#ContentInfoGauche , #ContentInfoDroite{
+    margin-top: 5vh;
+    width:50vw;
+    color:white;
+    font-weight: bold;
+}
+#ContentInfoGauche
+{
+    display: flex;
+    flex-direction: column;
+}
+.InfoTitre
+{
+    font-size:2vw;
+    margin-top: 10vh;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+#ConteneurListe,#ConteneurListeStations{
+    height: 50vh;
+    margin-top:5vh;
+    overflow-y: scroll;
+}
+#ContentInfoDroite{
+    color:white;
+}
+#ConteneurListe div, #ConteneurListeStations div{
+    height:4vh;
+    width:auto;
+    margin-left : 1vw;
+    border-radius: 10px;
+}
+
+#ConteneurListe div:hover ,#ConteneurListeStations div:hover{
+    background-color: #CCC;
+    cursor:pointer;
 }
