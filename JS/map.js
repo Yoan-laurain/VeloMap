@@ -17,7 +17,7 @@ var myIcon = L.icon({
  */
 function initMap() 
 {
-  //Set the view of the map at the start
+  //Set the view of the map at the beginning
   myMap = L.map('map').setView([44.868181, -0.547516], 4);
 
   //Load Map
@@ -32,7 +32,6 @@ function initMap()
 
   //Group close markers
   markerClusters = L.markerClusterGroup(); 
-
 }
 
 /**
@@ -106,7 +105,7 @@ function InfoStation(number,contractName)
       document.getElementById("nbBikes").innerHTML = ( data.mainStands.availabilities.bikes === "" ? "Non renseigné" : data.mainStands.availabilities.bikes + " Vélo(s) disponible(s)" );
       document.getElementById("mechanicalBikes").innerHTML = ( data.mainStands.availabilities.mechanicalBikes === "" ? "Non renseigné" : data.mainStands.availabilities.mechanicalBikes + " Vélo(s) méchanique(s)" );
       document.getElementById("electricalBikes").innerHTML = ( data.mainStands.availabilities.electricalBikes === "" ? "Non renseigné" : data.mainStands.availabilities.electricalBikes + " Vélo(s) electrique(s)" );
-      document.getElementById("MajData").innerHTML = "Last check : " + ( data.lastUpdate == "" ? "Non renseigné" : convertDate(data.lastUpdate) );
+      document.getElementById("MajData").innerHTML = "Recensement : " + ( data.lastUpdate == "" ? "Non renseigné" : convertDate(data.lastUpdate) );
       document.getElementById("BikeCapacity").innerHTML = "Capacité totale : " + ( data.mainStands.capacity == "" ? "Non renseigné" : data.mainStands.capacity + " Vélos" );
       document.getElementById("Banking").innerHTML = "Terminal de paiement : " + ( data.banking == "" ? "non renseigné" : data.banking ? "Disponible" : "Non disponible" );
       document.getElementById("overflow").innerHTML = "Repose de vélo : " +( data.overflow == "" ? "Non renseigné" : data.overflow ? "Autorisé" : "Refusé" );

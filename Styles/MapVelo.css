@@ -392,7 +392,7 @@ div#map
 }
 .libelleBloc2
 {
-    width:max-content;
+    width:14vw;
     margin-left:1vw;
     margin-top:auto;
     margin-bottom:auto;
@@ -410,29 +410,27 @@ span.nbBikes
 }
 .container
 {
-    width:25vh;
     margin:0 auto 0;
     text-align:center;
 }
 .dropdown
 {
-    width:25vh;
-    display:inline-block;
     background-color:#fff;
     border-radius:2px;
     box-shadow:0 0 2px #ccc;
     transition:all .5s ease;
     position:relative;
-    font-size:14px;
+    font-size:1vw;
     color:#474747;
     height:100%;
     text-align:left;
+    float:left;
 }
 .dropdown .select
 {
     cursor:pointer;
     display:block;
-    padding:10px;
+    padding:1vh;
 }
 .dropdown .select>i
 {
@@ -548,8 +546,8 @@ span.nbBikes
 }
 .search-wrapper .input-holder .search-icon
 {
-    width:70px;
-    height:70px;
+    width:2vw;
+    height:1vh;
     border:none;
     border-radius:6px;
     background:#fff;
@@ -557,16 +555,17 @@ span.nbBikes
     outline:0;
     position:relative;
     z-index:2;
-    float:right;
     cursor:pointer;
     transition:all .3s ease-in-out;
 }
 .search-wrapper.active .input-holder .search-icon
 {
-    width:3vw;
-    height:2.5vw;
+    height:2.5vh;
     margin:10px;
     border-radius:30px;
+    margin-top:2vh;
+    margin-left:13vw;
+    margin-right: 1vw;
 }
 .search-wrapper .input-holder .search-icon span
 {
@@ -608,7 +607,7 @@ span.nbBikes
 {
     position:absolute;
     z-index:1;
-    top:24px;
+    top:21px;
     right:20px;
     width:25px;
     height:25px;
@@ -619,7 +618,7 @@ span.nbBikes
 }
 .search-wrapper.active .close
 {
-    right:50px;
+    right:3vw;
     transform:rotate(45deg);
     transition:all .6s cubic-bezier(0,.105,.035,1.57);
     transition-delay:.5s;

@@ -7,7 +7,7 @@
     #ImageStation img
     {
         width:30vw;
-        height:15vw;
+        height:10vh;
     }
     .search-wrapper
     {
@@ -15,8 +15,8 @@
     }
     .search-wrapper.active .input-holder .search-input
     {
-        font-size:2vw;
-        margin-top: 1vw;
+        font-size:1.8vw;
+        margin-top: 4vw;
     }
     #input-holder
     {
@@ -28,7 +28,7 @@
         width: 28vw;
         margin:unset;
         margin-left : 1vw;
-        margin-top:2vw;
+        margin-top:5vh;
         margin-bottom:2vw;
     }
     #StatutStation
@@ -40,15 +40,15 @@
     }
     .libelleBloc2
     {
-        font-size: 1.7vw;
+        font-size: 1vh;
     }
     .ligneBloc2
     {
-        height:11vw;
+        height:11vh;
     }
     #SecondBlocStation
     {
-        height:78vw;
+        height:64vh;
     }
 
     .container, .dropdown
@@ -58,6 +58,10 @@
     #FirstBlocStation
     {
         width:30vw;
-        height:28vw;
+        height:24vh;
     } 
+    .dropdown
+    {
+        font-size:1vh;
+    }
 }
