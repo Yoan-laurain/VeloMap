@@ -64,4 +64,23 @@
     {
         font-size:1vh;
     }
+    #ContentInfo{
+        flex-direction: column;
+        height: unset;
+    }
+    #ContentInfoGauche , #ContentInfoDroite{
+        width:90vw;
+        margin:auto;
+    }
+    #ConteneurListe,#ConteneurListeStations{
+        width:90vw;
+        margin-top:2vh;
+        font-size:2vw;
+    }
+    .InfoTitre{
+        margin-top:3vh;
+    }
+    #ConteneurListeStations{
+        margin-bottom:5vh;
+    }
 }

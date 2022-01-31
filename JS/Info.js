@@ -43,6 +43,7 @@ function getAllStationsOfTheCity(city)
 
         if (request.status >= 200 && request.status < 400) 
         {
+            console.log(data);
             //For each object we retrieve
             data.forEach(stations => 
             {  
@@ -65,7 +66,6 @@ function createListCity()
     var conteneur = document.getElementById("ConteneurListe");
     var Parent = document.getElementById("ContentInfoDroite");
 
-
     for (const [key, value] of MapCityWithContract) 
     {
         var myDiv = document.createElement("div");
@@ -79,19 +79,21 @@ function createListCity()
                 Parent.removeChild(document.getElementById("ConteneurListeStations"));
                 var myContent = document.createElement("div");
                 myContent.id = "ConteneurListeStations";
+                myContent.setAttribute("data-aos","fade-left");
                 Parent.appendChild(myContent);
             }catch{}
             getAllStationsOfTheCity(key);
         }
-
         conteneur.appendChild(myDiv);
     }
+    //document.getElementById("amiens").click();
 }
 
 function CreateListStations()
 {
     MapStationsOfCity = new Map([...MapStationsOfCity.entries()].sort());
     var conteneur = document.getElementById("ConteneurListeStations");
+    var nomVille ="";
 
     for (const [key, value] of MapStationsOfCity) 
     {
@@ -100,6 +102,9 @@ function CreateListStations()
         myDiv.innerHTML = key;
 
         conteneur.appendChild(myDiv);
+        nomVille = value;
     }
+
+    document.getElementById("TitreStations").innerHTML = "Voici toutes les stations de " + nomVille;
 }
 
