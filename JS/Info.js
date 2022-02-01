@@ -1,5 +1,7 @@
 var MapCityWithContract = new Map();
 var MapStationsOfCity= new Map();
+var listCity =[];
+getAllCityWithContract();
 
 function getAllCityWithContract()
 {
@@ -43,7 +45,6 @@ function getAllStationsOfTheCity(city)
 
         if (request.status >= 200 && request.status < 400) 
         {
-            console.log(data);
             //For each object we retrieve
             data.forEach(stations => 
             {  
@@ -64,46 +65,45 @@ function createListCity()
     MapCityWithContract = new Map([...MapCityWithContract.entries()].sort());
 
     var conteneur = document.getElementById("ConteneurListe");
-    var Parent = document.getElementById("ContentInfoDroite");
+    const listItems = [];
 
     for (const [key, value] of MapCityWithContract) 
     {
-        var myDiv = document.createElement("div");
-        myDiv.id = key;
-        myDiv.innerHTML = key;
-
-        myDiv.onclick = function () 
-        {
-            try
-            {
-                Parent.removeChild(document.getElementById("ConteneurListeStations"));
-                var myContent = document.createElement("div");
-                myContent.id = "ConteneurListeStations";
-                myContent.setAttribute("data-aos","fade-left");
-                Parent.appendChild(myContent);
-            }catch{}
-            getAllStationsOfTheCity(key);
-        }
-        conteneur.appendChild(myDiv);
+        listItems.push({"id":key});
     }
-    //document.getElementById("amiens").click();
+
+    listCity = listItems.map((d) => <div id={d.id} onClick={() => showListStations(d.id)} >{d.id}</div>);
+
+    ReactDOM.render(ReactListCity(listCity),conteneur);
 }
+
+function showListStations(key)
+{
+    var cont = document.getElementById( "ConteneurListeStations") ;
+    while (cont.firstChild) {
+        cont.removeChild(cont.lastChild);
+      }
+    getAllStationsOfTheCity(key);
+}
+
+function ReactListCity(list){ return (<div>{ list } </div>) }
 
 function CreateListStations()
 {
     MapStationsOfCity = new Map([...MapStationsOfCity.entries()].sort());
     var conteneur = document.getElementById("ConteneurListeStations");
     var nomVille ="";
-
+    const listStations = [];
+    
     for (const [key, value] of MapStationsOfCity) 
     {
-        var myDiv = document.createElement("div");
-        myDiv.id = key;
-        myDiv.innerHTML = key;
-
-        conteneur.appendChild(myDiv);
+        listStations.push({"id":key});
         nomVille = value;
     }
+
+    var list = listStations.map((d) => <div id={d.id}>{d.id}</div>);
+
+    ReactDOM.render(ReactListCity(list),conteneur);
 
     document.getElementById("TitreStations").innerHTML = "Voici toutes les stations de " + nomVille;
 }
