@@ -678,12 +678,17 @@ span.nbBikes
     margin-top:5vh;
     overflow-y: scroll;
     font-size:1vw;
-    background-color: rgb(35,34,39);
+    background-color: rgb(84,41,146);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     padding:10px;
     border-radius:10px;
     width: 40vw;
     margin-left: auto;
     margin-right: auto;
+}
+#ConteneurListe:hover,#ConteneurListeStations:hover
+{
+    transform: translateY(-10px);
 }
 #ContentInfoDroite{
     color:white;
@@ -693,10 +698,13 @@ span.nbBikes
     width:auto;
     margin-left : 1vw;
     border-radius: 10px;
-}
+    text-align: center;
+  }
 
 #ConteneurListe div:hover ,#ConteneurListeStations div:hover{
-    background-color: rgb(32,177,160);
+    background-color: rgb(39,27,88);
+	border-radius:10px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     cursor:pointer;
     transform: translateY(-10px);
 }
