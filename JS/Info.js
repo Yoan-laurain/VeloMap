@@ -3,6 +3,10 @@ var MapStationsOfCity= new Map();
 var listCity =[];
 getAllCityWithContract();
 
+/**
+ * Call the API to get all city with a contract
+ * then call createListCity()
+ */
 function getAllCityWithContract()
 {
     //Déclare http request to call the API and retrieve stations datas
@@ -30,6 +34,11 @@ function getAllCityWithContract()
     request.send();
 }
 
+/**
+ * Call the api to retrieve all stations of the city in parameter
+ * Then call CreateListStations
+ * @param {*} city name of the city 
+ */
 function getAllStationsOfTheCity(city)
 {
     MapStationsOfCity = new Map();
@@ -59,7 +68,9 @@ function getAllStationsOfTheCity(city)
     request.send();
 }
 
-
+/**
+ * Create and display the list of city with a contract
+ */
 function createListCity()
 {
     MapCityWithContract = new Map([...MapCityWithContract.entries()].sort());
@@ -77,6 +88,11 @@ function createListCity()
     ReactDOM.render(ReactListCity(listCity),conteneur);
 }
 
+/**
+ * Empty the list of stations
+ * and call getAllStationsOfTheCity
+ * @param {*} key 
+ */
 function showListStations(key)
 {
     var cont = document.getElementById( "ConteneurListeStations") ;
@@ -86,8 +102,16 @@ function showListStations(key)
     getAllStationsOfTheCity(key);
 }
 
+/**
+ * Create div element for each element in the list in parameter
+ * @param {*} list  of city with a contract
+ * @returns a div which contain all div build 1 for each city in the list
+ */
 function ReactListCity(list){ return (<div>{ list } </div>) }
 
+/**
+ * Create the list of th stations with data called before
+ */
 function CreateListStations()
 {
     MapStationsOfCity = new Map([...MapStationsOfCity.entries()].sort());

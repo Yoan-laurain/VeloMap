@@ -16,7 +16,24 @@
     .search-wrapper.active .input-holder .search-input
     {
         font-size:1.8vw;
-        margin-top: 4vw;
+        margin-top: unset;
+        height: inherit;
+    }
+    .search-wrapper.active .close {
+        right:1vh;
+        margin-top: 2vh;
+    }
+    .search-wrapper.active .input-holder .search-icon {
+        margin-left:23vw;
+        margin-top:1vw;
+        height: inherit;
+    }
+    .MidAccueil{
+        height : 24vh;
+    }
+    
+    .MidAccueilGauche{
+        margin-top: 6vh;
     }
     #input-holder
     {

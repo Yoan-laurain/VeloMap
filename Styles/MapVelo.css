@@ -5,7 +5,9 @@
 }
 html, body 
 {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;	background-color: #F6F8FA;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;	
+    background-color: #F6F8FA;
+    overflow-x: hidden;
 }
 main 
 {
@@ -40,7 +42,7 @@ _   _               _
     padding-right:24px;
     padding-top:12px;
     padding-bottom:12px;
-    position:absolute;
+    position:fixed;
     top:0;
     z-index:999999
     ;transition:all .2s ease-in-out;
@@ -167,7 +169,7 @@ ______          _
 }
 .MidAccueil,.MidAccueil2,.MidAccueil3
 {
-    height:40vw;
+    height:70vh;
     display:flex;
     flex-direction:row;
     background-size:cover;
@@ -392,7 +394,7 @@ div#map
 }
 .libelleBloc2
 {
-    width:14vw;
+    width:90%;
     margin-left:1vw;
     margin-top:auto;
     margin-bottom:auto;
@@ -420,11 +422,12 @@ span.nbBikes
     box-shadow:0 0 2px #ccc;
     transition:all .5s ease;
     position:relative;
-    font-size:1vw;
+    font-size:2vh;
     color:#474747;
     height:100%;
     text-align:left;
     float:left;
+    width:90%;
 }
 .dropdown .select
 {
@@ -564,7 +567,7 @@ span.nbBikes
     margin:10px;
     border-radius:30px;
     margin-top:2vh;
-    margin-left:13vw;
+    margin-left:27vh;
     margin-right: 1vw;
 }
 .search-wrapper .input-holder .search-icon span
@@ -700,6 +703,9 @@ span.nbBikes
     border-radius: 10px;
     text-align: center;
   }
+#ConteneurListe div div,#ConteneurListeStations div div{
+    line-height: 3vh;
+}
 
 #ConteneurListe div div:hover ,#ConteneurListeStations div div:hover{
     background-color: rgb(39,27,88);
